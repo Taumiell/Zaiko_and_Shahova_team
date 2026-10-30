@@ -8,11 +8,15 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    index: './src/javascripts/index.js'
+    index: './src/javascripts/index.js',
+    about: './src/javascripts/about.js',
+    placeholder: './src/javascripts/placeholder.js'
   },
   output: {
     filename: '[name].js',
-    path: path.resolve('.', 'docs')
+    path: path.resolve('.', 'docs'),
+    publicPath: './',
+    clean: true
   },
   module: {
     rules: [
@@ -29,11 +33,16 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { url: false } },
+          'postcss-loader'
+        ]
       },
       {
         test: /\.html$/i,
-        loader: 'html-loader'
+        loader: 'html-loader',
+        options: { sources: false }
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
@@ -53,7 +62,7 @@ module.exports = {
   },
   plugins: [new MiniCssExtractPlugin(), ...htmlPages],
   optimization: {
-    minimizer: [new CssMinimizerPlugin()]
+    minimizer: [new CssMinimizerPlugin({ minimizerOptions: { preset: ['default', { calc: false }] } })]
   },
   resolve: {
     fallback: {

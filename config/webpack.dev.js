@@ -6,10 +6,16 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    static: './dev_build'
+    static: [{
+      directory: path.resolve(__dirname, '../public'),
+      publicPath: '/public'
+    }],
+    historyApiFallback: { index: '/index.html' },
+    devMiddleware: { publicPath: '/' }
   },
   output: {
     path: path.resolve('.', 'dev_build'),
+    publicPath: '/',
     clean: true
   }
 })

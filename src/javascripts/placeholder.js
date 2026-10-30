@@ -1,0 +1,1 @@
+import '../stylesheets/placeholder.css';

@@ -1,11 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5f4" />
+    <meta name="description" content="Афиша вечерних событий Нижнего Новгорода: мероприятия, подборки и статьи." />
+    <link rel="icon" type="image/svg+xml" href="public/assets/vectors/favicon.svg" />
+    <title>спешл фо — куда сходить в Нижнем Новгороде</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <h1>Hello World!</h1>
+    <div class="site-shell">
+      <header class="site-header" aria-label="Шапка сайта">
+        <nav class="header-nav header-nav--left" aria-label="Основная навигация">
+          <a href="placeholder.html">Все события</a>
+          <a href="placeholder.html">Сегодня</a>
+          <a href="placeholder.html">Подборки</a>
+        </nav>
+        <a class="brand brand--header" href="#top" aria-label="спешл фо — на главную">
+          <img class="brand-lockup" src="public/assets/vectors/header-logo.svg" alt="" />
+        </a>
+        <nav class="header-nav header-nav--right" aria-label="Дополнительная навигация">
+          <a href="placeholder.html">Статьи</a>
+          <a href="about.html">О проекте</a>
+          <a class="search-button" href="placeholder.html" aria-label="Поиск">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.4" cy="8.4" r="5.5" /><path d="m12.5 12.5 4.1 4.1" /></svg>
+          </a>
+        </nav>
+        <button class="mobile-menu-button" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu" aria-label="Навигация для телефона" hidden>
+          <a href="placeholder.html">Все события</a>
+          <a href="placeholder.html">Сегодня</a>
+          <a href="placeholder.html">Подборки</a>
+          <a href="placeholder.html">Статьи</a>
+          <a href="about.html">О проекте</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-photo" aria-hidden="true">
+            <img class="hero-shot is-active" src="public/assets/images/hero-01.png" alt="" />
+            <img class="hero-shot" src="public/assets/images/hero-02.png" alt="" />
+            <img class="hero-shot" src="public/assets/images/hero-03.png" alt="" />
+            <img class="hero-shot" src="public/assets/images/hero-04.png" alt="" />
+            <img class="hero-shot" src="public/assets/images/hero-05.png" alt="" />
+            <img class="hero-shot" src="public/assets/images/hero-06.png" alt="" />
+            <img class="hero-shot" src="public/assets/images/hero-07.png" alt="" />
+            <img class="hero-shot" src="public/assets/images/hero-08.png" alt="" />
+          </div>
+          <div class="hero-panel">
+            <h1 id="hero-title">Найдите, куда сходить в Нижнем Новгороде</h1>
+            <p class="hero-lead">Устали искать события подходящий под ваш интерес? Фильтры помогут найти подходящие события</p>
+            <div class="hero-actions">
+              <a class="hero-action hero-action--lime" href="placeholder.html">
+                <span class="hero-action-top"><span>Все мероприятия</span><span class="arrow-star" aria-hidden="true"></span></span>
+                <span class="hero-action-description">Устали искать события подходящий под ваш интерес? Фильтры помогут найти подходящие события</span>
+              </a>
+              <button class="hero-action hero-action--outline" type="button" data-survey-trigger aria-haspopup="dialog">
+                <span class="hero-action-top"><span>Пройти опрос</span><span class="arrow-star" aria-hidden="true"></span></span>
+                <span class="hero-action-description">Наши алгоритмы подстроятся и найдут мероприятия для вас</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section events-section" id="events" aria-labelledby="events-title">
+          <div class="content-container">
+            <h2 class="section-title" id="events-title">Ближайшие события</h2>
+            <div class="event-controls">
+              <div class="filters" aria-label="Категории мероприятий">
+                <button class="filter-chip is-selected" type="button" aria-pressed="true">Театр</button>
+                <button class="filter-chip is-selected" type="button" aria-pressed="true">Кино</button>
+                <button class="filter-chip" type="button" aria-pressed="false">Автоспорт</button>
+                <button class="filter-chip" type="button" aria-pressed="false">Настольные игры</button>
+                <button class="filter-chip" type="button" aria-pressed="false">Маркеты</button>
+              </div>
+              <a class="primary-button" href="placeholder.html"><span>Все мероприятия</span><span class="simple-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.2 11.4 4.4 12.6 11.2 5.8V11h1.6V3.2H5v1.6h5.2z"/></svg></span></a>
+            </div>
+            <div class="horizontal-viewport">
+              <div class="event-row" id="event-row"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section collections-section" id="collections" aria-labelledby="collections-title">
+          <div class="content-container">
+            <h2 class="section-title" id="collections-title">Тематические подборки</h2>
+            <div class="collection-layout">
+              <article class="collection-card collection-card--one">
+                <a class="card-link" href="placeholder.html" aria-label="Подборка: кино"></a>
+                <div class="collection-copy">
+                  <h3>Кино</h3>
+                  <ul>
+                    <li>Вечерний просмотр в кино</li>
+                    <li>Киноклуб на Рождественской</li>
+                    <li>Ночной марафон фильмов</li>
+                    <li>Кинофестиваль в Болдино</li>
+                    <li>Ярмарка киноплёнок</li>
+                  </ul>
+                </div>
+                <span class="arrow-star collection-arrow" aria-hidden="true"></span>
+                <img class="collection-art collection-art--one" src="public/assets/vectors/collection-art-one.svg" alt="" loading="lazy" />
+              </article>
+              <article class="collection-card collection-card--two">
+                <a class="card-link" href="placeholder.html" aria-label="Подборка: кино"></a>
+                <div class="collection-copy">
+                  <h3>Кино</h3>
+                  <ul>
+                    <li>Вечерний просмотр в кино</li>
+                    <li>Киноклуб на Рождественской</li>
+                    <li>Ночной марафон фильмов</li>
+                    <li>Кинофестиваль в Болдино</li>
+                    <li>Ярмарка киноплёнок</li>
+                  </ul>
+                </div>
+                <span class="arrow-star collection-arrow" aria-hidden="true"></span>
+                <img class="collection-art collection-art--two" src="public/assets/vectors/collection-art-two.svg" alt="" loading="lazy" />
+              </article>
+              <div class="collection-promos">
+                <article class="promo-card promo-card--lime">
+                  <a class="card-link" href="placeholder.html" aria-label="Смотреть все подборки"></a>
+                  <div class="promo-heading"><h3>Смотреть все подборки</h3><span class="arrow-star" aria-hidden="true"></span></div>
+                  <p>Устали искать события подходящий под ваш интерес? Подборки помогут найти смежные и новые варианты</p>
+                </article>
+                <article class="promo-card promo-card--survey" data-survey-trigger role="button" tabindex="0" aria-haspopup="dialog">
+                  <div class="promo-heading"><h3>Пройти опрос</h3><span class="arrow-star" aria-hidden="true"></span></div>
+                  <p>Наши алгоритмы подстроятся и найдут мероприятия для вас</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section articles-section" id="articles" aria-labelledby="articles-title">
+          <div class="content-container">
+            <div class="section-heading-row">
+              <h2 class="section-title" id="articles-title">Статьи и прошедших и предстоящих мероприятиях</h2>
+              <a class="primary-button" href="placeholder.html"><span>Все статьи</span><span class="simple-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.2 11.4 4.4 12.6 11.2 5.8V11h1.6V3.2H5v1.6h5.2z"/></svg></span></a>
+            </div>
+            <div class="horizontal-viewport articles-viewport">
+              <div class="article-row" id="article-row"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-section" id="about" aria-label="О проекте">
+          <div class="about-viewport">
+          <div class="about-collage">
+            <article class="problem-card problem-card--orange">
+              <div class="problem-content">
+                <h3>«События приходится искать в разных местах»</h3>
+                <span class="arrow-star" aria-hidden="true"></span>
+                <p>В одной афише можно посмотреть новые и интересные события Нижнего Новгорода.</p>
+              </div>
+            </article>
+            <article class="problem-card problem-card--pink">
+              <div class="problem-content">
+                <h3>«Одного постера мало, чтобы решить, идти ли»</h3>
+                <span class="arrow-star" aria-hidden="true"></span>
+                <p>В карточке события можно сверить дату, время, место и цену</p>
+              </div>
+            </article>
+            <article class="problem-card problem-card--lime">
+              <div class="problem-content">
+                <h3>«По короткому анонсу не всегда понятно, чего ждать»</h3>
+                <span class="arrow-star" aria-hidden="true"></span>
+                <p>Статьи и доступные фотографии помогают составить мнение о событии</p>
+              </div>
+            </article>
+            <article class="problem-card problem-card--pink problem-card--last">
+              <div class="problem-content">
+                <h3>«Интересные события по своим темам легко пропустить»</h3>
+                <span class="arrow-star" aria-hidden="true"></span>
+                <p>Тематические подборки помогают находить новые варианты по интересам</p>
+              </div>
+            </article>
+          </div>
+          </div>
+            <a class="primary-button about-button" href="about.html"><span>О проекте</span><span class="simple-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.2 11.4 4.4 12.6 11.2 5.8V11h1.6V3.2H5v1.6h5.2z"/></svg></span></a>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-top">
+          <nav class="footer-column" aria-label="Мероприятия">
+            <h2>МЕРОПРИЯТИЯ</h2>
+            <a href="placeholder.html">Все события</a>
+            <a href="placeholder.html">События сегодня</a>
+          </nav>
+          <nav class="footer-column" aria-label="Материалы">
+            <h2>МАТЕРИАЛЫ</h2>
+            <a href="placeholder.html">Подборки</a>
+            <a href="placeholder.html">Статьи</a>
+          </nav>
+          <nav class="footer-column" aria-label="Информация">
+            <h2>ИНФОРМАЦИЯ</h2>
+            <a href="about.html">О проекте</a>
+            <a href="placeholder.html">Контакты</a>
+          </nav>
+          <div class="social-links" aria-label="Социальные сети">
+            <a href="placeholder.html" aria-label="Telegram"><img src="public/assets/vectors/social-plane.svg" alt="" /></a>
+            <a href="placeholder.html" aria-label="ВКонтакте"><img src="public/assets/vectors/social-vk.svg" alt="" /></a>
+          </div>
+        </div>
+        <div class="footer-brand" aria-label="спешл фо">
+          <img class="footer-lockup" src="public/assets/vectors/brand-lockup.svg" alt="" />
+        </div>
+      </footer>
+    </div>
+    <div class="survey-dialog" role="dialog" aria-modal="true" aria-labelledby="survey-dialog-title" aria-describedby="survey-dialog-description" hidden>
+        <div class="survey-dialog__content">
+          <button class="survey-dialog__close" type="button" data-survey-close aria-label="Закрыть окно">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+          </button>
+          <p class="survey-dialog__eyebrow">ПОДБОР ПО ИНТЕРЕСАМ</p>
+          <h2 id="survey-dialog-title">Опрос пока не готов</h2>
+          <p id="survey-dialog-description">Пока выберите интересующие темы в блоке «Ближайшие события».</p>
+          <a class="survey-dialog__link" href="#events" data-survey-close>Выбрать интересы</a>
+        </div>
+    </div>
+  </body>
 </html>
